@@ -3,8 +3,10 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 
 const UpcomingSubscriptionCard = ({
-  data: { name, price, dayLeft, icon, currency },
-}: UpcomingSubscription) => {
+  data: { name, price, daysLeft, icon, currency },
+}: {
+  data: UpcomingSubscription;
+}) => {
   return (
     <View className="upcoming-card">
       <View className="upcoming-row">
@@ -14,7 +16,7 @@ const UpcomingSubscriptionCard = ({
             {formatCurrency(price, currency)}
           </Text>
           <Text className="upcoming-meta" numberOfLines={1}>
-            {dayLeft > 1 ? `${dayLeft} ` : "Last day"}
+            {daysLeft > 1 ? `${daysLeft} ` : "Last day"}
           </Text>
         </View>
       </View>
